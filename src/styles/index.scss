@@ -1,0 +1,59 @@
+@import "./reset.css";
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #BFCDEA;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+    background-color: #629677;
+    padding: 1rem;
+    border-radius: 10px;
+    width: 700px;
+    max-width: 90%;
+}
+
+.timer {
+    position: absolute;
+    top: 2rem;
+    font-size: 3rem;
+    color: #629677;
+    font-weight: bold;
+}
+
+.quote-display{
+    margin-bottom: 1rem;
+    margin-left: calc(1rem + 2px);
+    margin-right: calc(1rem + 2px);
+}
+
+.quote-input {
+    background-color: transparent;
+    border: 2px solid #3a8357;
+    outline: none;
+    width: 100%;
+    height: 8rem;
+    margin: auto;
+    resize: none;
+    padding: .5rem 1rem;
+    border-radius: 10px;
+
+    &:focus{
+        border: 2px solid #2b533b;
+    }
+}
+
+.correct{
+    color: #629677;
+}
+
+.incorrect{
+    color: #B84550;
+    text-decoration: underline;
+}
