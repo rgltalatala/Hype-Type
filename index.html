@@ -14,7 +14,7 @@
             src: url('./src/styles/fonts/Somatic-Rounded.otf') format("opentype");
         }
 
-        body, .quote-input {
+        body, .words-input {
             font-family: Somatic-Rounded;
             color: white;
             letter-spacing: 1.25px;
@@ -24,10 +24,14 @@
 </head>
 
 <body>
+    <canvas>
+    </canvas>
+    <script src="src/index.js"></script>
     <div class="timer" id="timer">0</div>
+    <div class="wpm" id="wpm">0</div>
     <div class="container">
-        <div class="quote-display" id="quoteDisplay">quote</div>
-        <textarea id="quoteInput" class="quote-input" autofocus>quote</textarea>
+        <div class="words-display" id="wordsDisplay">words</div>
+        <textarea id="wordsInput" class="words-input" autofocus>words</textarea>
     </div>
 </body>
 </html>

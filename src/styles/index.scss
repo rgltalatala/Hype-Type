@@ -1,6 +1,5 @@
 @import "./reset.css";
 
-
 body {
     display: flex;
     justify-content: center;
@@ -9,6 +8,10 @@ body {
     margin: 0;
     background-color: #BFCDEA;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+canvas {
+    border: 1px solid black;
 }
 
 .container {
@@ -27,13 +30,29 @@ body {
     font-weight: bold;
 }
 
-.quote-display{
+.words-display{
     margin-bottom: 1rem;
-    margin-left: calc(1rem + 2px);
-    margin-right: calc(1rem + 2px);
+    padding-top: calc(1rem + 2px);
+    padding-left: calc(1rem + 2px);
+    padding-right: calc(1rem + 2px);
+    height: 800px;
+    background-color: #BFCDEA;
+    border-radius: 10px;
 }
 
-.quote-input {
+.word {
+    position: relative;
+    // top:-100px;
+    background-color: #629677;
+    border-radius: 10px;
+    padding: 5px 25px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    animation: drop 10s;
+}
+
+.words-input {
     background-color: transparent;
     border: 2px solid #3a8357;
     outline: none;
@@ -57,3 +76,8 @@ body {
     color: #B84550;
     text-decoration: underline;
 }
+
+// @keyframes drop{
+//     0% {transform: translateY(-100px);}
+//     100%{transform: translateY(700px)}
+//   }
