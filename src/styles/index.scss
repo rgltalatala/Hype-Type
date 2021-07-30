@@ -18,7 +18,10 @@ canvas {
 .header { 
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
     width: 902px;
+    height: 80px;
+    margin-bottom: 15px;
 }
 
 .title {
@@ -32,6 +35,7 @@ canvas {
     border-radius: 10px;
     width: 700px;
     max-width: 90%;
+    margin-top: 25px;
 }
 
 .counter-container{
@@ -84,7 +88,7 @@ canvas {
     border: 2px solid #3a8357;
     outline: none;
     width: 100%;
-    height: 8rem;
+    // height: 8rem;
     margin: auto;
     resize: none;
     padding: .5rem 1rem;
@@ -108,3 +112,29 @@ canvas {
 //     0% {transform: translateY(-100px);}
 //     100%{transform: translateY(700px)}
 //   }
+
+.header-logo {
+    font-size: 40px;
+    width: 25px;
+    height: 25px;
+    margin: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.links {
+    display: flex;
+    margin: 15px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    border: none;
+    width: 60px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #629677;
+    color: white;
+}
