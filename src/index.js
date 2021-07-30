@@ -148,12 +148,15 @@ document.addEventListener('DOMContentLoaded', () => {
     //   return Math.floor((new Date() - startTime) / 1000)
     // }
 
-    
-    getNextWords()
+    let playButton = document.getElementById('play')
+    playButton.addEventListener('click', () => {
+        getNextWords()
+        animate()    
+        wordsInputElement.focus()
+    })
 
     
     cpm = Math.round(((characterTyped / timeElapsed) * 60));
     wpm = Math.round((((characterTyped / charactersPerWordAvg()) / timeElapsed) * 60));
     // wpmElement.innerText = wpm
-    animate()    
 })

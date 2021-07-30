@@ -5,7 +5,7 @@ export default class WordContainer {
         this.x = Math.random() * (canvas.width - 100);
         this.y = Math.random() * -1000;
         this.dx = 0;
-        this.dy = 0.5;
+        this.dy = 0.25;
         this.height = 50
         this.html = document.createElement('span')
         this.html.innerHTML = text
