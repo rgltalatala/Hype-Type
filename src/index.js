@@ -5,8 +5,10 @@ import Zone from './zone'
 document.addEventListener('DOMContentLoaded', () => {
     const wordsDisplayElement = document.getElementById('wordsDisplay')
     const wordsInputElement = document.getElementById('wordsInput')
+    const resetButton = document.getElementById('reset')
     const timerElement = document.getElementById('timer')
     let arrayWords
+    let gameOver = false;
     
     var canvas = document.querySelector('canvas');
     canvas.width = 900;
@@ -14,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     var ctx = canvas.getContext('2d'); // context
 
-    const words = getRandomWords(10)
+    var words = getRandomWords(10)
     function charactersPerWordAvg () {
         let charactersPerWord = 0;
 
@@ -25,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return charactersPerWord / 10
     }
 
-    const wordContainers = [];
+    let wordContainers = [];
     for (let i = 0; i < 10; i++){
         wordContainers.push(new WordContainer(words[i], ctx, canvas))
     }
@@ -41,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.successes = successes
 
     function animate(){
-        requestAnimationFrame(animate);
         ctx.clearRect(0, 0, innerWidth, innerHeight)
         let failZone = new Zone(ctx, canvas)
         failZone.draw()
@@ -55,6 +56,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log(misses)
             }
         }
+
+        handleGameStatus()
+        // if (gameOver === false){
+            requestAnimationFrame(animate);
+        // }
     }
     
     function incrementSuccesses(){
@@ -150,13 +156,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let playButton = document.getElementById('play')
     playButton.addEventListener('click', () => {
-        getNextWords()
+        // debugger
+        if (gameOver) {
+            words = getRandomWords(10);
+            gameOver = false;
+            wordContainers = [];
+            for (let i = 0; i < 10; i++){
+                wordContainers.push(new WordContainer(words[i], ctx, canvas))
+            }
+        }
         animate()    
+        getNextWords()
         wordsInputElement.focus()
     })
 
+    function handleGameStatus(){
+        if (misses + successes === 10){
+            gameOver = true
+        }
+
+        if (gameOver){
+            ctx.fillStyle = 'black';
+            ctx.font = '90px Somatic-Rounded';
+            ctx.fillText('GAME OVER', 180, 125);
+            ctx.fillStyle = 'white';
+            resetButton.style.display = "inline"
+        }
+    }
     
-    cpm = Math.round(((characterTyped / timeElapsed) * 60));
-    wpm = Math.round((((characterTyped / charactersPerWordAvg()) / timeElapsed) * 60));
+    // cpm = Math.round(((characterTyped / timeElapsed) * 60));
+    // wpm = Math.round((((characterTyped / charactersPerWordAvg()) / timeElapsed) * 60));
     // wpmElement.innerText = wpm
 })

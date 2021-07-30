@@ -5,7 +5,7 @@ export default class WordContainer {
         this.x = Math.random() * (canvas.width - 100);
         this.y = Math.random() * -1000;
         this.dx = 0;
-        this.dy = 0.25;
+        this.dy = 0.35;
         this.height = 50
         this.html = document.createElement('span')
         this.html.innerHTML = text
@@ -27,13 +27,12 @@ export default class WordContainer {
         this.ctx.textAlign="left"; 
         this.ctx.textBaseline = "top";
         this.ctx.fillText(this.text, this.x + 10, this.y + 15)
-
     }
 
     destroy(){
         let width = this.ctx.measureText(this.text).width;
         this.ctx.clearRect(this.x, this.y, width + 20, 50);
-         true
+        true
     }
 
     update() {

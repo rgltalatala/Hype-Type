@@ -12,7 +12,8 @@ body {
 }
 
 canvas {
-    border: 1px solid black;
+    border: 3px solid #629677;
+    border-radius: 10px;
 }
 
 .header { 
@@ -27,6 +28,9 @@ canvas {
 .title {
     color: #629677;
     letter-spacing: 2px;
+    width: 60%;
+    display: flex;
+    justify-content: center;
 }
 
 .container {
@@ -54,21 +58,33 @@ canvas {
 
 .wpm {
     position: relative;
-
     font-size: 3rem;
     color: #629677;
     font-weight: bold;
 }
 
 .words-display{
-    margin-bottom: 1rem;
+    // margin-bottom: 1rem;
     // padding-top: calc(1rem + 2px);
     // padding-left: calc(1rem + 2px);
     // padding-right: calc(1rem + 2px);
-    height: 0;
-    background-color: #BFCDEA;
+    // height: 50px;
+    // background-color: #BFCDEA;
     border-radius: 10px;
+    display: none;
     visibility: hidden;
+}
+
+// #reset {
+
+// }
+
+.desc { 
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    // width: 100%;
 }
 
 .word {
@@ -125,16 +141,28 @@ canvas {
 .links {
     display: flex;
     margin: 15px;
-    width: 80px;
+    width: 20%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+}
+
+.buttons {
+    width: 20%;
+    display: flex;
 }
 
 button {
     border: none;
     width: 60px;
+    margin-left: 5px;
+    margin-right: 5px;
     height: 40px;
     border-radius: 10px;
     background-color: #629677;
     color: white;
+
+    &:hover{
+        cursor: pointer;
+        background-color: #6ba784;
+    }
 }

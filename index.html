@@ -26,7 +26,10 @@
 
 <body>
     <div class='header'>
-        <button class='play' id='play'>Play</button>
+        <div class='buttons'>
+            <button class='play' id='play'>Play</button>
+            <button style='display: none' id="reset" onClick="location.reload()">Reset</button>
+        </div>
         <h1 class='title'>HypeType</h1>
         <div class='links'>
             <a href='https://www.linkedin.com/in/raphael-talatala-703943129/' >
@@ -45,7 +48,12 @@
     </canvas>
     <script src="src/index.js"></script>
     <div class="container">
-        <div class="words-display" id="wordsDisplay">words</div>
+        <div class="words-display" id="wordsDisplay">
+        </div>
+        <div class='desc'>
+            Type the words as they fall down and hit spacebar to submit your word!
+            Hit play to start or reset the game.  
+        </div>
         <textarea id="wordsInput" class="words-input" autofocus>words</textarea>
     </div>
 </body>

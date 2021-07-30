@@ -372,7 +372,8 @@ body {
 }
 
 canvas {
-  border: 1px solid black;
+  border: 3px solid #629677;
+  border-radius: 10px;
 }
 
 .header {
@@ -387,6 +388,9 @@ canvas {
 .title {
   color: #629677;
   letter-spacing: 2px;
+  width: 60%;
+  display: flex;
+  justify-content: center;
 }
 
 .container {
@@ -420,11 +424,16 @@ canvas {
 }
 
 .words-display {
-  margin-bottom: 1rem;
-  height: 0;
-  background-color: #BFCDEA;
   border-radius: 10px;
+  display: none;
   visibility: hidden;
+}
+
+.desc {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 .word {
@@ -473,16 +482,27 @@ canvas {
 .links {
   display: flex;
   margin: 15px;
-  width: 80px;
+  width: 20%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+}
+
+.buttons {
+  width: 20%;
+  display: flex;
 }
 
 button {
   border: none;
   width: 60px;
+  margin-left: 5px;
+  margin-right: 5px;
   height: 40px;
   border-radius: 10px;
   background-color: #629677;
   color: white;
+}
+button:hover {
+  cursor: pointer;
+  background-color: #6ba784;
 }
