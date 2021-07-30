@@ -368,10 +368,22 @@ body {
   margin: 0;
   background-color: #BFCDEA;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  flex-direction: column;
 }
 
 canvas {
   border: 1px solid black;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 902px;
+}
+
+.title {
+  color: #629677;
+  letter-spacing: 2px;
 }
 
 .container {
@@ -382,9 +394,22 @@ canvas {
   max-width: 90%;
 }
 
+.counter-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 200px;
+}
+
 .timer {
-  position: absolute;
-  top: 2rem;
+  position: relative;
+  font-size: 3rem;
+  color: #629677;
+  font-weight: bold;
+}
+
+.wpm {
+  position: relative;
   font-size: 3rem;
   color: #629677;
   font-weight: bold;
@@ -392,12 +417,10 @@ canvas {
 
 .words-display {
   margin-bottom: 1rem;
-  padding-top: calc(1rem + 2px);
-  padding-left: calc(1rem + 2px);
-  padding-right: calc(1rem + 2px);
-  height: 800px;
+  height: 0;
   background-color: #BFCDEA;
   border-radius: 10px;
+  visibility: hidden;
 }
 
 .word {
