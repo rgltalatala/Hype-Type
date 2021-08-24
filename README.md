@@ -1,6 +1,6 @@
-# Hype-Type
+# HypeType
 
-Hyper Typer will put your typing skills to the test! With swiftness and accuracy, type the words as they fall down the screen. Correctly type enough words, and you'll move on to the next round. However, too many errors and you lose!
+HypeType will put your typing skills to the test! With swiftness and accuracy, type the words as they fall down the screen. Correctly type enough words, and you'll move on to the next round. However, too many errors and you lose!
 
 # Wireframe
 
