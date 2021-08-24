@@ -506,3 +506,19 @@ button:hover {
   cursor: pointer;
   background-color: #6ba784;
 }
+
+.counter-container {
+  width: 400px;
+}
+
+.score {
+  width: 80px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.word-counter {
+  width: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+}

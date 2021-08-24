@@ -7,64 +7,58 @@ document.addEventListener('DOMContentLoaded', () => {
     const wordsInputElement = document.getElementById('wordsInput')
     const resetButton = document.getElementById('reset')
     const timerElement = document.getElementById('timer')
-    let arrayWords
-    let gameOver = false;
+    const scoreElement = document.getElementById('score')
+    const wordCounterElement = document.getElementById('wordCounter')
     
+    let gameOver = false;
+    let arrayWords
+    let wordCount = 0;
     var canvas = document.querySelector('canvas');
     canvas.width = 900;
     canvas.height = 375;
 
     var ctx = canvas.getContext('2d'); // context
-
     var words = getRandomWords(10)
-    function charactersPerWordAvg () {
-        let charactersPerWord = 0;
-
-        words.forEach(word => {
-            charactersPerWord += word.length
-        })
-
-        return charactersPerWord / 10
-    }
 
     let wordContainers = [];
     for (let i = 0; i < 10; i++){
         wordContainers.push(new WordContainer(words[i], ctx, canvas))
     }
 
-    let characterTyped = 0;
-    let timeElapsed = 0;
     let misses = 0;
-    window.misses = misses;
-    let cpm = 0;
-    let wpmElement = document.getElementById('wpm')
-    let wpm = 0;
     let successes = 0;
-    window.successes = successes
+    let score = 0
 
     function animate(){
         ctx.clearRect(0, 0, innerWidth, innerHeight)
         let failZone = new Zone(ctx, canvas)
         failZone.draw()
-        // wordContainer.update()
+        
         for (var i = 0; i < wordContainers.length; i++){
             wordContainers[i].update()
             if (wordContainers[i].y >= 302){
                 wordContainers[i].destroy()
                 wordContainers.splice(i, 1);
                 misses += 1
-                console.log(misses)
+                score -= 50
+                wordCount += 1
+                scoreElement.innerHTML = score
+                wordCounterElement.innerHTML = wordCount
             }
         }
 
         handleGameStatus()
         // if (gameOver === false){
-            requestAnimationFrame(animate);
+        requestAnimationFrame(animate);
         // }
     }
     
     function incrementSuccesses(){
         successes += 1;
+        score += 50
+        wordCount += 1
+        scoreElement.innerHTML = score
+        wordCounterElement.innerHTML = wordCount
     }
 
     function findAndDestroyWord(word){
@@ -82,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const arrayValue = wordsInputElement.value.split("");
         let correct = true
 
-        //space character entered
+        // space character entered
         if(e.data === " "){
             let word = e.target.value.trim();
             let destroyed = findAndDestroyWord(word)
@@ -146,7 +140,6 @@ document.addEventListener('DOMContentLoaded', () => {
     //   startTime = new Date()
     //   setInterval(() => {
     //     timerElement.innerText = getTimerTime()
-    //     timeElapsed++;
     //   }, 1000)
     // }
     
@@ -156,7 +149,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let playButton = document.getElementById('play')
     playButton.addEventListener('click', () => {
-        // debugger
         if (gameOver) {
             words = getRandomWords(10);
             gameOver = false;
@@ -184,7 +176,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    // cpm = Math.round(((characterTyped / timeElapsed) * 60));
-    // wpm = Math.round((((characterTyped / charactersPerWordAvg()) / timeElapsed) * 60));
-    // wpmElement.innerText = wpm
 })

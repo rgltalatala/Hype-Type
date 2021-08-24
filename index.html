@@ -40,10 +40,12 @@
             </a>
         </div>
     </div>
-    <!-- <div class='counter-container'>
-        <div class="timer" id="timer">0</div>
-        <div class="wpm" id="wpm">0</div>
-    </div> -->
+    <div class='counter-container'>
+        <!-- <div class="timer" id="timer">0</div> -->
+        Score: 
+        <div class="score" id="score">0</div>
+        Words: <div class="word-counter" id="wordCounter"> 0</div>/ 10
+    </div>
     <canvas>
     </canvas>
     <script src="src/index.js"></script>
@@ -52,7 +54,7 @@
         </div>
         <div class='desc'>
             Type the words as they fall down and hit spacebar to submit your word!
-            Hit play to start or reset the game.  
+            You gain points for every word typed successfully Hit play to start, and reset once the level ends.  
         </div>
         <textarea id="wordsInput" class="words-input" autofocus>words</textarea>
     </div>
