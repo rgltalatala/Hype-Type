@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const timerElement = document.getElementById('timer')
     const scoreElement = document.getElementById('score')
     const wordCounterElement = document.getElementById('wordCounter')
-    const playButtonElement = document.getElementById('play')
     
     let gameOver = false;
     let arrayWords
@@ -146,6 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
         animate()    
         getNextWords()
         wordsInputElement.focus()
+        playButton.disabled = "disabled"
     })
 
     function handleGameStatus(){
@@ -159,7 +159,6 @@ document.addEventListener('DOMContentLoaded', () => {
             ctx.fillText('GAME OVER', 180, 125);
             ctx.fillStyle = 'white';
             resetButton.style.display = "inline"
-            playButtonElement.disabled = "disabled"
         }
     }
     
