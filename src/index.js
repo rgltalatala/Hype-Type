@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const timerElement = document.getElementById('timer')
     const scoreElement = document.getElementById('score')
     const wordCounterElement = document.getElementById('wordCounter')
+    const playButtonElement = document.getElementById('play')
     
     let gameOver = false;
     let arrayWords
@@ -101,7 +102,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 correct = false 
             }
         })
-        // console.log(characterTyped)
         if (correct) getNextWords();
     });
 
@@ -131,21 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         
         wordsInputElement.value = null
-        // startTimer()
     }
-    // let startTime
-    
-    // function startTimer() {
-    //   timerElement.innerText = 0
-    //   startTime = new Date()
-    //   setInterval(() => {
-    //     timerElement.innerText = getTimerTime()
-    //   }, 1000)
-    // }
-    
-    // function getTimerTime() {
-    //   return Math.floor((new Date() - startTime) / 1000)
-    // }
 
     let playButton = document.getElementById('play')
     playButton.addEventListener('click', () => {
@@ -173,6 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ctx.fillText('GAME OVER', 180, 125);
             ctx.fillStyle = 'white';
             resetButton.style.display = "inline"
+            playButtonElement.disabled = "disabled"
         }
     }
     

@@ -182,3 +182,15 @@ button {
     padding-left: 10px;
     padding-right: 10px;
 }
+
+ul {
+    display: flex;
+    flex-direction: column;
+    // align-items: flex-start;
+}
+
+li {
+    list-style-type: none;
+    text-align: start;
+
+}

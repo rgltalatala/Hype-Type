@@ -522,3 +522,13 @@ button:hover {
   padding-left: 10px;
   padding-right: 10px;
 }
+
+ul {
+  display: flex;
+  flex-direction: column;
+}
+
+li {
+  list-style-type: none;
+  text-align: start;
+}
