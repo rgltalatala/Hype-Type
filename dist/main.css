@@ -434,6 +434,11 @@ canvas {
   display: flex;
   justify-content: center;
   text-align: center;
+  flex-direction: column;
+}
+.desc li {
+  list-style-type: none;
+  text-align: start;
 }
 
 .word {
@@ -526,9 +531,4 @@ button:hover {
 ul {
   display: flex;
   flex-direction: column;
-}
-
-li {
-  list-style-type: none;
-  text-align: start;
 }

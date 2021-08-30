@@ -84,7 +84,11 @@ canvas {
     display: flex;
     justify-content: center;
     text-align: center;
-    // width: 100%;
+    flex-direction: column;
+    li {
+        list-style-type: none;
+        text-align: start;
+    }
 }
 
 .word {
@@ -189,8 +193,3 @@ ul {
     // align-items: flex-start;
 }
 
-li {
-    list-style-type: none;
-    text-align: start;
-
-}
