@@ -142,10 +142,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 wordContainers.push(new WordContainer(words[i], ctx, canvas))
             }
         }
+        playButton.disabled = "disabled";
         animate()    
         getNextWords()
         wordsInputElement.focus()
-        playButton.disabled = "disabled"
     })
 
     function handleGameStatus(){
